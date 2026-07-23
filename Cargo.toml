@@ -1,5 +1,5 @@
 [package]
-name = "bookshelf_layout_tool"
+name = "abs-layout"
 version = "0.1.0"
 edition = "2024"
 
