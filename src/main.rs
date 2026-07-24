@@ -26,11 +26,11 @@ pub struct Args{
     pub output_path: String,
 
     /// Directly make the changes without outputting a shell script.
-    #[arg(short,long,default_value="false")]
+    #[arg(short,long,action)]
     pub apply:bool,
 
     /// Output a shell script to make the changes (default)
-    #[arg(short,long,default_value="true")]
+    #[arg(short,long,action)]
     pub shell:bool,
 }
 
@@ -52,6 +52,7 @@ fn main(){
     // 1. read books.json into DirTreeLevel::Leaves
     // 2. build_tree
     // 3. compile_move_ops
+    
     let args = Args::parse();
     let res:anyhow::Result<()> = try {
         eprintln!("Starting");
