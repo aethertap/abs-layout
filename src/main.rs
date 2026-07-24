@@ -73,7 +73,7 @@ fn main(){
                 .map_err(|e| anyhow::Error::from(e))?)
             .map_err(|e| anyhow::Error::from(e))?;
         let root = DirTreeLevel::Leaves(all_books.0);
-        let tree = root.build_tree(&[Genre,Author,Series])?;
+        let tree = root.build_tree(&[Author,Series])?;
         let ops = tree.compile_move_ops(&book_files_dir, &output_path)?;
         let mut dir_cache = HashSet::new();
         for op in ops.iter() {
